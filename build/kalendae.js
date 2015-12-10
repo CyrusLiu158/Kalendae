@@ -478,8 +478,8 @@
 					else klass.push(classes.dayInMonth);
 
 					if (!(this.blackout(day) || this.direction(day) || (day.month() != month.month() && opts.dayOutOfMonthClickable === false)) || s > 0){
-						if (day.isBefore(currMoment)) klass.push(classes.dayDisabled);
-						else klass.push(classes.dayActive);
+						if (day.isAfter(currMoment) || day.isSame(currMoment, 'day')) klass.push(classes.dayActive);
+						else klass.push(classes.dayDisabled)
 					}
 					//if (day.isBefore(currMoment)) klass.push(classes.dayDisabled);
 
